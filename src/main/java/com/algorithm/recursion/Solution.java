@@ -57,8 +57,8 @@ package com.algorithm.recursion;
 
 public class Solution {
     public static void main(String[] args) {
-        int[] stones = new int[]{0,1,2,3,4,8,9,11};
-        new Solution().canCross(stones);
+        int[] stones = new int[]{0,1,9};
+        System.out.println(new Solution().canCross(stones));
     }
 
     public boolean canCross(int[] stones) {
@@ -83,7 +83,7 @@ public class Solution {
         int index = -1;
         for (int i = b + 1; i < arr.length; i++) {
             int a1 = arr[i] - arr[b];
-            if (a1 >= k - 1) {
+            if (a1 >= k - 1 && a1 <= k + 1) {
                 index = i;
                 break;
             }
